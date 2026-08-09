@@ -1,0 +1,42 @@
+.persona-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.persona-role {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  margin-bottom: 18px;
+}
+
+.persona-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.persona-principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.persona-principles li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: flex;
+  gap: 8px;
+}
+
+.principle-mark {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  flex-shrink: 0;
+}

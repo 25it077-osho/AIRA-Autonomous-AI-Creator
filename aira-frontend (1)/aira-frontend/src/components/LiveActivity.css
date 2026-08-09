@@ -1,0 +1,110 @@
+.activity-card .card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity-live-tag {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.activity-live-tag.on {
+  color: #baf5d8;
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.activity-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.activity-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(var(--border-glass-strong), transparent 95%);
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  position: relative;
+  animation: activity-in 0.4s ease both;
+  animation-delay: calc(var(--i, 0) * 0.06s);
+}
+
+@keyframes activity-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.activity-item:first-child .activity-label {
+  color: var(--text-primary);
+}
+
+.activity-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background: var(--surface-glass-strong);
+  border: 1px solid var(--border-glass);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.activity-item.type-reject .activity-icon {
+  border-color: rgba(251, 113, 133, 0.35);
+}
+
+.activity-item.type-select .activity-icon,
+.activity-item.type-publish .activity-icon {
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.activity-item.type-generate .activity-icon,
+.activity-item.type-evaluate .activity-icon {
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.activity-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.activity-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-time {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}

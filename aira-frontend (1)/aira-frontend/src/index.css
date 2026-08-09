@@ -1,0 +1,138 @@
+/* ---------------------------------------------------------------------------
+   AIRA — design tokens
+   Concept: a signals-intelligence station monitoring the AI security world.
+   Deep space surface, a violet→cyan transmission gradient as the single
+   accent gesture, amber for rejection, green for live/published states.
+--------------------------------------------------------------------------- */
+:root {
+  --bg: #080b16;
+  --bg-elevated: #0e1326;
+  --bg-elevated-2: #131a33;
+  --surface-glass: rgba(255, 255, 255, 0.045);
+  --surface-glass-strong: rgba(255, 255, 255, 0.075);
+  --border-glass: rgba(255, 255, 255, 0.09);
+  --border-glass-strong: rgba(255, 255, 255, 0.16);
+
+  --accent-violet: #8b5cf6;
+  --accent-cyan: #22d3ee;
+  --accent-gradient: linear-gradient(120deg, #8b5cf6 0%, #6366f1 45%, #22d3ee 100%);
+  --accent-amber: #f5a524;
+  --accent-rose: #fb7185;
+  --accent-green: #34d399;
+
+  --text-primary: #eef0fb;
+  --text-secondary: #b7bcda;
+  --text-muted: #767ea3;
+
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+  --shadow-glow-violet: 0 0 0 1px rgba(139, 92, 246, 0.25), 0 0 40px -8px rgba(139, 92, 246, 0.45);
+  --shadow-glow-cyan: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 0 40px -8px rgba(34, 211, 238, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(680px 460px at 12% -8%, rgba(139, 92, 246, 0.22), transparent 60%),
+    radial-gradient(600px 420px at 100% 0%, rgba(34, 211, 238, 0.16), transparent 55%),
+    radial-gradient(900px 700px at 50% 120%, rgba(99, 102, 241, 0.14), transparent 60%),
+    var(--bg);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(1200px 800px at 50% 0%, black, transparent 75%);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
